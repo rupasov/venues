@@ -2,7 +2,7 @@ import { BASE_API_URL, API_VERSION_DATE } from '../constants';
 
 export const getVenues = location => {
   return fetch(
-    `${BASE_API_URL}?near=amsterdam&client_id=${
+    `${BASE_API_URL}?near=${location}&client_id=${
       process.env.REACT_APP_CLIENT_ID
     }&client_secret=${
       process.env.REACT_APP_CLIENT_SECRET

@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background: linear-gradient(45deg,#0abf53 0,#4ee5e5 100%);
   height: 150px;
   padding: 20px;
   color: white;

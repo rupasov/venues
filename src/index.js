@@ -1,16 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { Provider } from "react-redux";
-import reducers from "./reducers";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Provider } from 'react-redux';
+import reducers from './reducers';
+import App from './containers/App';
 
 const middlewares = [];
 
-if (process.env.NODE_ENV === "development") {
-  const { logger } = require("redux-logger");
+if (process.env.NODE_ENV === 'development') {
+  const { logger } = require('redux-logger');
   middlewares.push(logger);
 }
 
@@ -24,5 +24,5 @@ ReactDOM.render(
       <App />
     </MuiThemeProvider>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );

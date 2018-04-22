@@ -1,8 +1,9 @@
-import { CHANGE_LOCATION, CHANGE_RADIUS } from '../constants';
+import { CHANGE_LOCATION, CHANGE_RADIUS, SAVE_VENUES } from '../constants';
 
 const initState = {
   selectedLocation: '',
-  selectedRadius: ''
+  selectedRadius: '',
+  venuesList: {}
 };
 
 const venues = (state = initState, action) => {
@@ -16,6 +17,11 @@ const venues = (state = initState, action) => {
       return {
         ...state,
         selectedRadius: action.radius
+      };
+    case SAVE_VENUES:
+      return {
+        ...state,
+        venuesList: action.venuesList
       };
     default:
       return state;

@@ -21,7 +21,7 @@ function handleRequestDelete() {
 }
 
 function handleClick(e) {
-  console.log(e);
+  console.log(process.env.REACT_APP_CLIENT_ID);
 }
 
 export default class Sections extends React.Component {

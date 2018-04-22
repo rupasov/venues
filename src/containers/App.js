@@ -8,11 +8,16 @@ import Radius from '../components/Radius';
 import Sections from '../components/Sections';
 import Button from '../components/Button';
 
-import { changeLocation, changeRadius } from '../actions';
+import { changeLocation, changeRadius, fetchVenues } from '../actions';
 
 class App extends Component {
   render() {
-    const { changeLocation, changeRadius } = this.props;
+    const {
+      selectedLocation,
+      changeLocation,
+      changeRadius,
+      fetchVenues
+    } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -22,7 +27,7 @@ class App extends Component {
         <Location onChange={changeLocation} />
         <Radius onChange={changeRadius} />
         <Sections />
-        <Button />
+        <Button fetchVenues={fetchVenues} location={selectedLocation} />
       </div>
     );
   }
@@ -34,9 +39,10 @@ App.propTypes = {
 
 const mapStateToProps = ({ venues }) => ({
   selectedLocation: venues.selectedLocation,
-  selectedRadius: venues.selectedRadius
+  selectedRadius: venues.selectedRadius,
+  venuesList: venues.venuesList
 });
 
-const mapDispatchToProps = { changeLocation, changeRadius };
+const mapDispatchToProps = { changeLocation, changeRadius, fetchVenues };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,45 +1,24 @@
-import {
-  CHANGE_LOCATION,
-  CHANGE_RADIUS,
-  SAVE_VENUES,
-  CHANGE_SECTION,
-  CHANGE_OPEN_NOW
-} from '../constants';
+import { CHANGE_USER_INPUT_VALUE, SAVE_VENUES } from '../constants';
 
 const initState = {
-  selectedLocation: '',
-  selectedRadius: '',
-  selectedSection: '',
-  openNowIsSelected: false,
+  location: '',
+  radius: '',
+  section: '',
+  openNow: false,
   venuesList: null
 };
 
 const venues = (state = initState, action) => {
   switch (action.type) {
-    case CHANGE_LOCATION:
+    case CHANGE_USER_INPUT_VALUE:
       return {
         ...state,
-        selectedLocation: action.location
-      };
-    case CHANGE_RADIUS:
-      return {
-        ...state,
-        selectedRadius: action.radius
+        [action.inputType]: action.value
       };
     case SAVE_VENUES:
       return {
         ...state,
         venuesList: action.venuesList
-      };
-    case CHANGE_SECTION:
-      return {
-        ...state,
-        selectedSection: action.section
-      };
-    case CHANGE_OPEN_NOW:
-      return {
-        ...state,
-        openNowIsSelected: !state.openNowIsSelected
       };
     default:
       return state;

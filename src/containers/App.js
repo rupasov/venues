@@ -9,27 +9,18 @@ import Sections from '../components/Sections';
 import Toggle from '../components/Toggle';
 import Button from '../components/Button';
 import CardExampleWithAvatar from '../components/VenueCards';
-import {
-  changeLocation,
-  changeRadius,
-  fetchVenues,
-  changeSection,
-  changeIsOpenNow
-} from '../actions';
+import { changUserInputValue, fetchVenues } from '../actions';
 
 class App extends Component {
   render() {
     const {
-      selectedLocation,
-      selectedRadius,
-      selectedSection,
-      changeLocation,
-      changeRadius,
-      changeIsOpenNow,
-      openNowIsSelected,
-      changeSection,
-      fetchVenues,
-      venuesList
+      location,
+      radius,
+      section,
+      openNow,
+      venuesList,
+      changUserInputValue,
+      fetchVenues
     } = this.props;
     return (
       <div className="App">
@@ -37,16 +28,16 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Location onChange={changeLocation} />
-        <Radius onChange={changeRadius} />
-        <Sections onChange={changeSection} />
-        <Toggle onChange={changeIsOpenNow} />
+        <Location changUserInputValue={changUserInputValue} />
+        <Radius changUserInputValue={changUserInputValue} />
+        <Sections changUserInputValue={changUserInputValue} />
+        <Toggle changUserInputValue={changUserInputValue} openNow={openNow} />
         <Button
           fetchVenues={fetchVenues}
-          location={selectedLocation}
-          radius={selectedRadius}
-          section={selectedSection}
-          openNow={openNowIsSelected}
+          location={location}
+          radius={radius}
+          section={section}
+          openNow={openNow}
         />
         {venuesList &&
           venuesList.response.groups && (
@@ -62,19 +53,16 @@ App.propTypes = {
 };
 
 const mapStateToProps = ({ venues }) => ({
-  selectedLocation: venues.selectedLocation,
-  selectedRadius: venues.selectedRadius,
-  selectedSection: venues.selectedSection,
-  openNowIsSelected: venues.openNowIsSelected,
+  location: venues.location,
+  radius: venues.radius,
+  section: venues.section,
+  openNow: venues.openNow,
   venuesList: venues.venuesList
 });
 
 const mapDispatchToProps = {
-  changeLocation,
-  changeRadius,
-  fetchVenues,
-  changeSection,
-  changeIsOpenNow
+  changUserInputValue,
+  fetchVenues
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

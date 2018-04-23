@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import FontIcon from 'material-ui/FontIcon';
@@ -16,11 +17,18 @@ const styles = {
   }
 };
 
-const Toggle = ({ onChange }) => (
-  <Chip onClick={e => onChange()} style={styles.chip}>
+const Toggle = ({ changUserInputValue, openNow }) => (
+  <Chip
+    onClick={e => changUserInputValue('openNow', !openNow)}
+    style={styles.chip}
+  >
     <Avatar color="#444" icon={<SvgIconFace />} />
     Open Now
   </Chip>
 );
+
+Toggle.propTypes = {
+  changUserInputValue: PropTypes.func
+};
 
 export default Toggle;

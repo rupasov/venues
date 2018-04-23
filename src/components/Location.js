@@ -2,15 +2,15 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import PropTypes from 'prop-types';
 
-const Location = ({ onChange }) => (
+const Location = ({ changUserInputValue }) => (
   <TextField
     floatingLabelText="Location"
-    onChange={(event, newValue) => onChange(newValue)}
+    onChange={(event, newValue) => changUserInputValue('location', newValue)}
   />
 );
 
 Location.propTypes = {
-  changeLocation: PropTypes.func
+  changUserInputValue: PropTypes.func
 };
 
 export default Location;

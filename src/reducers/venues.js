@@ -3,7 +3,7 @@ import { CHANGE_LOCATION, CHANGE_RADIUS, SAVE_VENUES } from '../constants';
 const initState = {
   selectedLocation: '',
   selectedRadius: '',
-  venuesList: {}
+  venuesList: null
 };
 
 const venues = (state = initState, action) => {

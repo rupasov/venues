@@ -7,7 +7,7 @@ import Location from '../components/Location';
 import Radius from '../components/Radius';
 import Sections from '../components/Sections';
 import Button from '../components/Button';
-
+import CardExampleWithAvatar from '../components/VenueCards';
 import { changeLocation, changeRadius, fetchVenues } from '../actions';
 
 class App extends Component {
@@ -16,7 +16,8 @@ class App extends Component {
       selectedLocation,
       changeLocation,
       changeRadius,
-      fetchVenues
+      fetchVenues,
+      venuesList
     } = this.props;
     return (
       <div className="App">
@@ -28,6 +29,7 @@ class App extends Component {
         <Radius onChange={changeRadius} />
         <Sections />
         <Button fetchVenues={fetchVenues} location={selectedLocation} />
+        {venuesList && <CardExampleWithAvatar venues={venuesList} />}
       </div>
     );
   }

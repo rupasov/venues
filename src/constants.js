@@ -13,5 +13,6 @@ export const SECTIONS = [
   'outdoors',
   'sights',
   'trending',
-  'topPick'
+  'topPick',
+  'openNow'
 ];

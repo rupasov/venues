@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Radius = ({ onChange }) => (
   <TextField
-    hintText="Radius"
+    floatingLabelText="Radius"
     onChange={(event, newValue) => onChange(newValue)}
   />
 );

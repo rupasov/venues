@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Location = ({ onChange }) => (
   <TextField
-    hintText="Location"
+    floatingLabelText="Location"
     onChange={(event, newValue) => onChange(newValue)}
   />
 );

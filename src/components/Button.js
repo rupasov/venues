@@ -2,8 +2,12 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
 
-const Button = ({ fetchVenues, location }) => (
-  <RaisedButton label="Search" primary onClick={e => fetchVenues(location)} />
+const Button = ({ fetchVenues, location, radius, section, openNow }) => (
+  <RaisedButton
+    label="Search"
+    primary
+    onClick={e => fetchVenues(location, radius, section, openNow)}
+  />
 );
 
 Button.propTypes = {};

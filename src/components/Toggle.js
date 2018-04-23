@@ -16,15 +16,11 @@ const styles = {
   }
 };
 
-const Sections = ({ onChange }) => (
-  <div style={styles.wrapper}>
-    {SECTIONS.map(section => (
-      <Chip key={section} onClick={e => onChange(section)} style={styles.chip}>
-        <Avatar color="#444" icon={<SvgIconFace />} />
-        {section}
-      </Chip>
-    ))}
-  </div>
+const Toggle = ({ onChange }) => (
+  <Chip onClick={e => onChange()} style={styles.chip}>
+    <Avatar color="#444" icon={<SvgIconFace />} />
+    Open Now
+  </Chip>
 );
 
-export default Sections;
+export default Toggle;

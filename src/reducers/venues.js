@@ -1,8 +1,16 @@
-import { CHANGE_LOCATION, CHANGE_RADIUS, SAVE_VENUES } from '../constants';
+import {
+  CHANGE_LOCATION,
+  CHANGE_RADIUS,
+  SAVE_VENUES,
+  CHANGE_SECTION,
+  CHANGE_OPEN_NOW
+} from '../constants';
 
 const initState = {
   selectedLocation: '',
   selectedRadius: '',
+  selectedSection: '',
+  openNowIsSelected: false,
   venuesList: null
 };
 
@@ -22,6 +30,16 @@ const venues = (state = initState, action) => {
       return {
         ...state,
         venuesList: action.venuesList
+      };
+    case CHANGE_SECTION:
+      return {
+        ...state,
+        selectedSection: action.section
+      };
+    case CHANGE_OPEN_NOW:
+      return {
+        ...state,
+        openNowIsSelected: !state.openNowIsSelected
       };
     default:
       return state;

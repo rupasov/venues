@@ -7,7 +7,7 @@ import './App.css';
 import Location from '../components/Location';
 import Radius from '../components/Radius';
 import Sections from '../components/Sections';
-import Toggle from '../components/Toggle';
+import Open from '../components/Open';
 import Button from '../components/Button';
 import VenueCards from '../components/VenueCards';
 import { changUserInputValue, fetchVenues } from '../actions';
@@ -36,30 +36,38 @@ class App extends Component {
         </header>
         <section>
           <div style={{ textAlign: 'center' }}>
-            <Location changUserInputValue={changUserInputValue} />
-            <Radius changUserInputValue={changUserInputValue} />
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center'
-              }}
-            >
-              <Sections changUserInputValue={changUserInputValue} />
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Toggle
-                changUserInputValue={changUserInputValue}
+            <div>
+              <Location changUserInputValue={changUserInputValue} />
+              <Radius changUserInputValue={changUserInputValue} />
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center'
+                }}
+              >
+                <Sections changUserInputValue={changUserInputValue} />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center'
+                }}
+              >
+                <Open
+                  changUserInputValue={changUserInputValue}
+                  openNow={openNow}
+                />
+              </div>
+              <Button
+                fetchVenues={fetchVenues}
+                location={location}
+                radius={radius}
+                section={section}
                 openNow={openNow}
               />
             </div>
-            <Button
-              fetchVenues={fetchVenues}
-              location={location}
-              radius={radius}
-              section={section}
-              openNow={openNow}
-            />
           </div>
         </section>
         <section>

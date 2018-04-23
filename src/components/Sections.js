@@ -11,7 +11,6 @@ import BarIcon from 'material-ui/svg-icons/maps/local-bar';
 import RestaurantIcon from 'material-ui/svg-icons/maps/restaurant';
 import OutdoorIcon from 'material-ui/svg-icons/maps/terrain';
 import ShopIcon from 'material-ui/svg-icons/maps/store-mall-directory';
-import { blue300, indigo900 } from 'material-ui/styles/colors';
 import { SECTIONS } from '../constants';
 
 const styles = {

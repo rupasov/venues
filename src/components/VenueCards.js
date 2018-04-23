@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Card,
-  CardActions,
-  CardHeader,
-  CardMedia,
-  CardTitle,
-  CardText
-} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import { BASE_GOOGLE_MAP_URL } from '../constants';
 
 const VenueCards = ({ venues }) =>

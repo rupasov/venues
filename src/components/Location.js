@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 const Location = ({ changUserInputValue }) => (
   <TextField
     floatingLabelText="Location"
+    underlineFocusStyle={{ borderColor: '#21BE58' }}
+    floatingLabelFocusStyle={{ color: '#21BE58' }}
     onChange={(event, newValue) => changUserInputValue('location', newValue)}
   />
 );

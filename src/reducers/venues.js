@@ -4,7 +4,7 @@ const initState = {
   location: '',
   radius: '',
   section: '',
-  openNow: false,
+  openNow: 0,
   venuesList: null
 };
 

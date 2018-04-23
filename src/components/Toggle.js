@@ -19,7 +19,7 @@ const styles = {
 
 const Toggle = ({ changUserInputValue, openNow }) => (
   <Chip
-    onClick={e => changUserInputValue('openNow', !openNow)}
+    onClick={e => changUserInputValue('openNow', Number(!openNow))}
     style={styles.chip}
   >
     <Avatar color="#444" icon={<SvgIconFace />} />
@@ -28,7 +28,8 @@ const Toggle = ({ changUserInputValue, openNow }) => (
 );
 
 Toggle.propTypes = {
-  changUserInputValue: PropTypes.func
+  changUserInputValue: PropTypes.func,
+  openNow: PropTypes.number
 };
 
 export default Toggle;

@@ -8,29 +8,28 @@ import {
   CardText
 } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import { BASE_GOOGLE_MAP_URL } from '../constants';
 
-const CardExampleWithAvatar = ({ venues }) =>
+const VenueCards = ({ venues }) =>
   venues.response.groups[0].items.map((item, index) => (
-    <Card key={index}>
-      <CardTitle
-        title={item.venue.name}
-        subtitle={item.venue.categories[0].name}
-      />
-      <CardText>
-        <a
-          href={`http://www.google.com/maps/place/${item.venue.location.lat},${
-            item.venue.location.lng
-          }`}
-          target="_blank"
-        >
-          {item.venue.location.address}
-        </a>
-      </CardText>
-      <CardActions>
-        <FlatButton label="Action1" />
-        <FlatButton label="Action2" />
-      </CardActions>
-    </Card>
+    <div>
+      <Card key={index} style={{ width: '40%' }}>
+        <CardTitle
+          title={item.venue.name}
+          subtitle={item.venue.categories[0].name}
+        />
+        <CardText>
+          <a
+            href={`${BASE_GOOGLE_MAP_URL}${item.venue.location.lat},${
+              item.venue.location.lng
+            }`}
+            target="_blank"
+          >
+            {item.venue.location.address}
+          </a>
+        </CardText>
+      </Card>
+    </div>
   ));
 
-export default CardExampleWithAvatar;
+export default VenueCards;

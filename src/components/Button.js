@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Button = ({ fetchVenues, location, radius, section, openNow }) => (
   <RaisedButton
     label="Search"
-    primary
+    labelStyle={{ color: '#21BE58' }}
     onClick={e => fetchVenues(location, radius, section, openNow)}
   />
 );

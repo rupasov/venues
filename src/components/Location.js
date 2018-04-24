@@ -8,6 +8,7 @@ const Location = ({ changUserInputValue }) => (
     underlineFocusStyle={{ borderColor: '#21BE58' }}
     floatingLabelFocusStyle={{ color: '#21BE58' }}
     onChange={(event, newValue) => changUserInputValue('location', newValue)}
+    style={{ marginRight: '40px' }}
   />
 );
 

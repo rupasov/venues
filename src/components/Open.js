@@ -10,37 +10,30 @@ const styles = {
     marginBottom: 16
   },
   thumbOff: {
-    backgroundColor: '#ffcccc'
+    backgroundColor: '#F5F5F5'
   },
   trackOff: {
-    backgroundColor: '#ff9d9d'
+    backgroundColor: '#BDBDBD'
   },
   thumbSwitched: {
-    backgroundColor: 'red'
+    backgroundColor: '#21BE58'
   },
   trackSwitched: {
-    backgroundColor: '#ff9d9d'
+    backgroundColor: '#92ecb2'
   },
   labelStyle: {
     color: 'red'
   }
 };
 
-// const Toggle = ({ changUserInputValue, openNow }) => (
-//   <Chip
-//     onClick={e => changUserInputValue('openNow', Number(!openNow))}
-//     style={styles.chip}
-//   >
-//     <Avatar color="#444" icon={<SvgIconFace />} />
-//     Open Now
-//   </Chip>
-// );
-
 const Open = ({ changUserInputValue, openNow }) => (
   <div style={styles.block}>
     <Toggle
       label="Open Now"
-      style={styles.toggle}
+      thumbStyle={styles.thumbOff}
+      trackStyle={styles.trackOff}
+      thumbSwitchedStyle={styles.thumbSwitched}
+      trackSwitchedStyle={styles.trackSwitched}
       onToggle={e => changUserInputValue('openNow', Number(!openNow))}
     />
   </div>

@@ -37,13 +37,16 @@ class App extends Component {
         <section>
           <div style={{ textAlign: 'center' }}>
             <div>
-              <Location changUserInputValue={changUserInputValue} />
-              <Radius changUserInputValue={changUserInputValue} />
+              <div style={{ marginBottom: '40px' }}>
+                <Location changUserInputValue={changUserInputValue} />
+                <Radius changUserInputValue={changUserInputValue} />
+              </div>
               <div
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  marginBottom: '40px'
                 }}
               >
                 <Sections changUserInputValue={changUserInputValue} />
@@ -52,7 +55,8 @@ class App extends Component {
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  marginBottom: '30px'
                 }}
               >
                 <Open
@@ -71,8 +75,10 @@ class App extends Component {
           </div>
         </section>
         <section>
-          {venuesList &&
-            venuesList.response.groups && <VenueCards venues={venuesList} />}
+          <div style={{ textAlign: 'center' }}>
+            {venuesList &&
+              venuesList.response.groups && <VenueCards venues={venuesList} />}
+          </div>
         </section>
       </div>
     );

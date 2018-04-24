@@ -5,7 +5,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Usage
 - Clone the repo
 - npm i 
-- Add `.env.development.local` file with the API credentials to the root folder ```js REACT_APP_CLIENT_ID=<CLIENT_ID> REACT_APP_CLIENT_SECRET=<CLIENT_SECRET>```
+- Add `.env.development.local` file with the API credentials to the root folder:
+``` js
+REACT_APP_CLIENT_ID=<CLIENT_ID> 
+REACT_APP_CLIENT_SECRET=<CLIENT_SECRET>
+```
 - npm start
 
 ### Known issues 

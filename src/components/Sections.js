@@ -20,6 +20,9 @@ const styles = {
   wrapper: {
     display: 'flex',
     flexWrap: 'wrap'
+  },
+  avatar: {
+    color: '#444'
   }
 };
 
@@ -45,7 +48,7 @@ const Sections = ({ changUserInputValue }) => (
           onClick={e => changUserInputValue('section', section.APIParam)}
           style={styles.chip}
         >
-          <Avatar color="#444" icon={<Icon />} />
+          <Avatar color={styles.avatar.color} icon={<Icon />} />
           {section.name}
         </Chip>
       );

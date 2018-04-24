@@ -2,7 +2,7 @@ import { CHANGE_USER_INPUT_VALUE, SAVE_VENUES } from '../constants';
 
 const initState = {
   location: '',
-  radius: '',
+  radius: null,
   section: '',
   openNow: 0,
   venuesList: null

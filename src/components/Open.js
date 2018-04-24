@@ -6,9 +6,6 @@ const styles = {
   block: {
     maxWidth: 300
   },
-  toggle: {
-    marginBottom: 16
-  },
   thumbOff: {
     backgroundColor: '#F5F5F5'
   },
@@ -20,9 +17,6 @@ const styles = {
   },
   trackSwitched: {
     backgroundColor: '#92ecb2'
-  },
-  labelStyle: {
-    color: 'red'
   }
 };
 

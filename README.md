@@ -24,6 +24,8 @@ REACT_APP_CLIENT_SECRET=<CLIENT_SECRET>
 - It should use [sytled-components](https://github.com/styled-components/styled-components)
 - UX has to be improved 
 - Add possibility of login to Foursquare, it would allow to have personalized response from the API
+- Add some pagination functionality 
+- Add tests to the project
 
 
 
